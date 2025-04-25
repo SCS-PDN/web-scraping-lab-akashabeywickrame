@@ -12,11 +12,9 @@ public class ScrapeServlet extends HttpServlet {
         String url = request.getParameter("url");
         String[] options = request.getParameterValues("option");
 
-        // Run the scraper
         WebScraper.BBCScraping scraper = new WebScraper.BBCScraping();
         scraper.scrape(url);
 
-        // Set up HTML response
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
